@@ -10,7 +10,6 @@ interface Props {
   title2: string;
   desc1: string;
   desc2: string;
-
   linkName: string;
   buttonText: string;
 }
