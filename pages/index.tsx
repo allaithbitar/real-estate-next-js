@@ -15,7 +15,6 @@ interface Props {
 const Home: NextPage<Props> = ({ propertiesForSale, propertiesForRent }) => {
   return (
     <Box>
-      <h1>Hello Next</h1>
       <Banner
         purpose="RENT A HOME"
         title1="Rental Homes for"
