@@ -1,15 +1,32 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
-import Router from "next/dist/server/router";
 import Nprogress from "nprogress";
 import Head from "next/head";
 import Layout from "../components/layout.component";
+import Router from "next/router";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  Nprogress.configure({ showSpinner: false });
+
+  Router.events.on("routeChangeStart", () => {
+    Nprogress.start();
+  });
+
+  Router.events.on("routeChangeComplete", () => {
+    Nprogress.done();
+  });
   return (
     <>
-      <Head></Head>
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+          integrity="sha512-42kB9yDlYiCEfx2xVwq0q7hT4uf26FUgSIZBK8uiaEnTdShXjwr8Ip1V4xGJMg3mHkUt9nNuTDxunHF0/EgxLQ=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
+      </Head>
       <ChakraProvider>
         <Layout>
           <Component {...pageProps} />
