@@ -36,8 +36,8 @@ const Navbar = () => (
           color="red.400"
         />
         <MenuList>
-          {navLinks.map((navlink) => (
-            <Link href={navlink.href} passHref>
+          {navLinks.map((navlink, idx) => (
+            <Link key={idx} href={navlink.href} passHref>
               <MenuItem icon={<navlink.icon />}>{navlink.text}</MenuItem>
             </Link>
           ))}
