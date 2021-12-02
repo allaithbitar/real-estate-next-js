@@ -47,7 +47,9 @@ const Banner: React.FC<Props> = ({
         {desc2}
       </Text>
       <Button fontSize="xl" bg="blue.300" color="white">
-        <Link href={linkName}>{buttonText}</Link>
+        <Link href={linkName}>
+          <a>{buttonText}</a>
+        </Link>
       </Button>
     </Box>
   </Flex>
